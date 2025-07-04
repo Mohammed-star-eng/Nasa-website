@@ -1454,7 +1454,7 @@ button#fetch-button {
 }
 
 .news-item h4 {
-  font-size: 0.8rem !important;
+  font-size: 0.7rem !important;
   text-align: left !important;
   color: #ffffff;
   font-weight: 600;
@@ -1472,7 +1472,7 @@ button#fetch-button {
 }
 
 .news-item h5 {
-  font-size: 0.8rem !important;
+  font-size: 0.7rem !important;
   text-align: left !important;
   color: #ffffff;
   font-weight: 600;
@@ -1490,7 +1490,7 @@ button#fetch-button {
 }
 
 .news-item .date {
-  font-size: 0.7rem !important;
+  font-size: 0.6rem !important;
   text-align: left !important;
   color: #4a9eff;
   margin: 0;
