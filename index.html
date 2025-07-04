@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NASA Universe Portal</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+ 
+
+  <header class="header">
+    <nav class="nav container">
+      <div class="logo-container">
+        <img src="img/NASA-Logo.png" alt="NASA Logo" class="nasa-logo">
+        <div class="logo">NASA Universe</div>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#missions">Missions</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#apod">APOD</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero" id="hero">
+    <div class="hero-content container">
+      <h1>Welcome to NASA's Universe Portal</h1>
+      <p class="hero-subtitle">Journey beyond the stars and into the vast expanse of space. Discover NASA’s most ambitious missions, breathtaking cosmic imagery, and the latest scientific breakthroughs—all in one place. This is your gateway to the wonders of the universe.</p>
+    </div>
+  </section>
+
+  <!-- NASA Missions Section -->
+  <section class="missions" id="missions">
+    <div class="container">
+      <h2>Featured Missions</h2>
+      <p class="missions-subtitle">Pioneering the next frontier of space exploration and scientific discovery</p>
+      <div class="mission-cards">
+        <a href="https://www.nasa.gov/artemis/" target="_blank" style="text-decoration: none; color: inherit;">
+          <div class="mission">
+            <div class="mission-image-container">
+              <div class="mission-icon">🚀</div>
+              <div class="mission-status planned">Active</div>
+              <img src="img/artemis.webp" alt="Artemis Program">
+              <div class="mission-overlay"></div>
+            </div>
+            <div class="mission-content">
+              <h3>Artemis Program</h3>
+              <p>NASA's ambitious program to return humans to the Moon and establish a sustainable presence, paving the way for future Mars exploration missions.</p>
+              <div class="mission-footer">
+                <span class="mission-launch-date">Next Launch: 2025</span>
+                <button class="mission-cta">Learn More</button>
+              </div>
+            </div>
+            <div class="mission-progress">
+              <div class="mission-progress-bar"></div>
+            </div>
+          </div>
+        </a>
+        
+        <a href="https://webb.nasa.gov/" target="_blank" style="text-decoration: none; color: inherit;">
+          <div class="mission">
+            <div class="mission-image-container">
+              <div class="mission-icon">🔭</div>
+              <div class="mission-status">Operational</div>
+              <img src="img/james.jpeg" alt="James Webb Space Telescope">
+              <div class="mission-overlay"></div>
+            </div>
+            <div class="mission-content">
+              <h3>James Webb Space Telescope</h3>
+              <p>The most powerful space telescope ever built, peering deep into space and time to explore the origins of the universe and search for signs of life.</p>
+              <div class="mission-footer">
+                <span class="mission-launch-date">Launched: 2021</span>
+                <button class="mission-cta">Explore</button>
+              </div>
+            </div>
+            <div class="mission-progress">
+              <div class="mission-progress-bar"></div>
+            </div>
+          </div>
+        </a>
+        
+        <a href="https://mars.nasa.gov/mars2020/" target="_blank" style="text-decoration: none; color: inherit;">
+          <div class="mission">
+            <div class="mission-image-container">
+              <div class="mission-icon">🔴</div>
+              <div class="mission-status in-progress">Exploring</div>
+              <img src="img/mars.jpeg" alt="Mars Perseverance">
+              <div class="mission-overlay"></div>
+            </div>
+            <div class="mission-content">
+              <h3>Mars Perseverance</h3>
+              <p>Advanced rover searching for signs of ancient microbial life on Mars while collecting and storing rock samples for future return to Earth.</p>
+              <div class="mission-footer">
+                <span class="mission-launch-date">Active Since: 2021</span>
+                <button class="mission-cta">Discover</button>
+              </div>
+            </div>
+            <div class="mission-progress">
+              <div class="mission-progress-bar"></div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- News & Updates Section -->
+  <section class="news-section" id="news">
+    <div class="container">
+      <h2>Latest Space News</h2>
+      <p class="news-subtitle">Stay informed with breaking space discoveries and mission updates</p>
+      <div id="news-container" class="news-container">
+        <div class="loading-message" style="grid-column: 1 / -1;">
+          <div style="font-size: 2rem; margin-bottom: 1rem;">📡</div>
+          <div>Loading latest space news...</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NASA APOD Section -->
+  <section class="apod-section" id="apod">
+    <div class="container">
+      <h2>Astronomy Picture of the Day (APOD)</h2>
+      <p>Discover breathtaking cosmic imagery published daily by NASA.</p>
+      <div class="date-controls">
+        <label for="start-date">Start Date:</label>
+        <input type="date" id="start-date" />
+        <label for="end-date">End Date:</label>
+        <input type="date" id="end-date" />
+      </div>
+      <button id="fetch-button">Engage Stargate</button>
+    </div>
+  </section>
+
+  <section id="gallery" class="gallery">
+    <div class="container">
+      <h2>APOD Gallery</h2>
+      <div id="gallery-grid" class="gallery-grid">
+        <div class="initial-message">
+          <div class="text">Please select a date to see the Astronomy Picture of the Day</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Statistics & Achievements Section -->
+  <section class="stats-section" id="stats">
+    <div class="container">
+      <h2>NASA by the Numbers</h2>
+      <p class="stats-subtitle">Decades of exploration, discovery, and human achievement</p>
+      
+      <div class="stats-grid">
+        <div class="stat-card missions-stat">
+          <div class="stat-icon">🚀</div>
+          <div class="stat-number" data-target="135">0</div>
+          <div class="stat-label">Successful Missions</div>
+          <div class="stat-description">Since 1958</div>
+        </div>
+        
+        <div class="stat-card astronauts-stat">
+          <div class="stat-icon">👨‍🚀</div>
+          <div class="stat-number" data-target="350">0</div>
+          <div class="stat-label">Astronauts Trained</div>
+          <div class="stat-description">American space explorers</div>
+        </div>
+        
+        <div class="stat-card discoveries-stat">
+          <div class="stat-icon">🪐</div>
+          <div class="stat-number" data-target="5400">0</div>
+          <div class="stat-label">Exoplanets Discovered</div>
+          <div class="stat-description">Worlds beyond our solar system</div>
+        </div>
+        
+        <div class="stat-card data-stat">
+          <div class="stat-icon">📡</div>
+          <div class="stat-number" data-target="847">0</div>
+          <div class="stat-label">Terabytes of Data</div>
+          <div class="stat-description">Collected annually</div>
+        </div>
+      </div>
+      
+      <div class="achievements-showcase">
+        <h3>Mission Timeline</h3>
+        <div class="timeline-tabs">
+          <button class="timeline-tab active" data-tab="historic">Historic Achievements</button>
+          <button class="timeline-tab" data-tab="upcoming">Upcoming Missions</button>
+        </div>
+        
+        <div class="timeline-container" id="historic-timeline">
+          <div class="timeline-item">
+            <div class="timeline-year">1969</div>
+            <div class="timeline-content">
+              <h4>Moon Landing</h4>
+              <p>First humans on the Moon with Apollo 11</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">1977</div>
+            <div class="timeline-content">
+              <h4>Voyager Launch</h4>
+              <p>Twin spacecraft launched to explore outer planets</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">1990</div>
+            <div class="timeline-content">
+              <h4>Hubble Launch</h4>
+              <p>Revolutionary space telescope deployment</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">1998</div>
+            <div class="timeline-content">
+              <h4>ISS Construction</h4>
+              <p>International Space Station assembly begins</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2021</div>
+            <div class="timeline-content">
+              <h4>Mars Helicopter</h4>
+              <p>First powered flight on another planet</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2022</div>
+            <div class="timeline-content">
+              <h4>Webb First Images</h4>
+              <p>Deepest infrared view of the universe</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="timeline-container hidden" id="upcoming-timeline">
+          <div class="timeline-item upcoming">
+            <div class="timeline-year">2025</div>
+            <div class="timeline-content">
+              <h4>Artemis III</h4>
+              <p>First crewed lunar landing since Apollo 17</p>
+              <div class="mission-status">Planned</div>
+            </div>
+          </div>
+          <div class="timeline-item upcoming">
+            <div class="timeline-year">2026</div>
+            <div class="timeline-content">
+              <h4>Europa Clipper</h4>
+              <p>Mission to Jupiter's moon Europa to study its ocean</p>
+              <div class="mission-status">In Development</div>
+            </div>
+          </div>
+          <div class="timeline-item upcoming">
+            <div class="timeline-year">2027</div>
+            <div class="timeline-content">
+              <h4>Dragonfly</h4>
+              <p>Rotorcraft lander mission to Saturn's moon Titan</p>
+              <div class="mission-status">Approved</div>
+            </div>
+          </div>
+          <div class="timeline-item upcoming">
+            <div class="timeline-year">2028</div>
+            <div class="timeline-content">
+              <h4>Mars Sample Return</h4>
+              <p>Bringing Martian samples back to Earth</p>
+              <div class="mission-status">In Planning</div>
+            </div>
+          </div>
+          <div class="timeline-item upcoming">
+            <div class="timeline-year">2029</div>
+            <div class="timeline-content">
+              <h4>VIPER Moon Rover</h4>
+              <p>Searching for water ice at lunar south pole</p>
+              <div class="mission-status">In Development</div>
+            </div>
+          </div>
+          <div class="timeline-item upcoming">
+            <div class="timeline-year">2030</div>
+            <div class="timeline-content">
+              <h4>Nancy Grace Roman</h4>
+              <p>Next-generation space telescope for dark energy research</p>
+              <div class="mission-status">Approved</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Signup Section -->
+  <section class="newsletter">
+    <div class="newsletter-shooting-star"></div>
+    <div class="newsletter-shooting-star2"></div>
+    <div class="newsletter-shooting-star3"></div>
+     <div class="newsletter-shooting-star4"></div>
+    <div class="newsletter-shooting-star5"></div>
+    <div class="newsletter-shooting-star6"></div>
+    <div class="newsletter-shooting-star7"></div>
+    <div class="container">
+      <h2>Stay Updated!</h2>
+      <p>Fuel your curiosity—get NASA's latest wonders, daily space photos, and exclusive updates sent straight to you.</p>
+      
+      <form id="newsletter-form" class="newsletter-form">
+        <input type="email" placeholder="Enter your email address" required />
+        <button type="submit" class="newsletter-submit">
+          <span class="submit-text">Subscribe</span>
+        </button>
+      </form>
+      
+      <div id="success-message" class="success-message">
+        🚀 Success! Welcome to the NASA Universe community!
+      </div>
+      
+      <div id="error-message" class="error-message">
+        ❌ Please enter a valid email address.
+      </div>
+      
+      <div class="subscription-benefits">
+        <div class="benefit-item">
+          <span class="benefit-icon">✓</span>
+          <span class="benefit-text">Daily APOD Updates</span>
+        </div>
+        <div class="benefit-item">
+          <span class="benefit-icon">✓</span>
+          <span class="benefit-text">Mission Alerts</span>
+        </div>
+        <div class="benefit-item">
+          <span class="benefit-icon">✓</span>
+          <span class="benefit-text">Breaking Space News</span>
+        </div>
+        <div class="benefit-item">
+          <span class="benefit-icon">✓</span>
+          <span class="benefit-text">Scientific Discoveries</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer" id="about">
+    <div class="footer-content container">
+      <div class="footer-section">
+        <div class="footer-logo-section">
+          <img src="img/NASA-Logo.png" alt="NASA Official Logo" class="footer-nasa-logo">
+          <div>
+            <h3>NASA Universe Portal</h3>
+            <p>Your gateway to the cosmos. Explore NASA's missions, discoveries, and cosmic imagery from across the universe.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <div class="footer-links-grid">
+          <div class="link-column">
+            <a href="https://apod.nasa.gov/" target="_blank">APOD</a>
+            <a href="https://nasa.gov" target="_blank">NASA.gov</a>
+            <a href="https://mars.nasa.gov/" target="_blank">Mars Missions</a>
+            <a href="https://webb.nasa.gov/" target="_blank">Webb Telescope</a>
+          </div>
+          <div class="link-column">
+            <a href="https://www.nasa.gov/audience/forstudents/" target="_blank">For Students</a>
+            <a href="https://www.nasa.gov/audience/foreducators/" target="_blank">For Educators</a>
+            <a href="https://images.nasa.gov/" target="_blank">Image Gallery</a>
+            <a href="https://www.nasa.gov/news/" target="_blank">Latest News</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Contact NASA</h3>
+        <div class="contact-compact">
+          <p><strong>Headquarters:</strong> 300 E Street SW, Washington, DC 20546</p>
+          <p><strong>Public Inquiries:</strong> (202) 358-0001</p>
+          <p><strong>Email:</strong> public-inquiries@nasa.gov</p>
+          <p><strong>Media:</strong> (281) 483-5111 • newsroom@nasa.gov</p>
+        </div>
+        
+        <div class="social-links">
+          <a href="https://twitter.com/nasa" target="_blank" class="social-link">Twitter</a>
+          <a href="https://www.facebook.com/NASA" target="_blank" class="social-link">Facebook</a>
+          <a href="https://www.instagram.com/nasa/" target="_blank" class="social-link">Instagram</a>
+          <a href="https://www.youtube.com/nasa" target="_blank" class="social-link">YouTube</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <div class="footer-bottom-content">
+        <div class="footer-bottom-left">
+          <p>&copy; 2025 NASA Universe Portal. Data courtesy of NASA Open Data Portal.</p>
+        </div>
+        <div class="footer-bottom-right">
+          <a href="https://www.nasa.gov/privacy/" target="_blank">Privacy</a>
+          <a href="https://www.nasa.gov/about/highlights/HP_Privacy.html" target="_blank">Terms</a>
+          <a href="https://www.nasa.gov/foia/" target="_blank">FOIA</a>
+          <a href="https://www.nasa.gov/about/contact/" target="_blank">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  <div id="apodModal" class="modal" style="display:none;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close" id="closeModalBtn">&times;</span>
+        <h2 id="modalTitle"></h2>
+        <div class="modal-date" id="modalDate"></div>
+      </div>
+      <div class="modal-body">
+        <img id="modalImage" class="modal-image" src="" alt="">
+        <div class="modal-explanation" id="modalExplanation"></div>
+      </div>
+      <div class="modal-footer">
+        <span class="modal-type" id="modalType"></span>
+        <span class="modal-copyright" id="modalCopyright"></span>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
+
