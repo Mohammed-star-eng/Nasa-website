@@ -481,10 +481,15 @@ function displayNews(newsArray) {
             const newsItem = document.createElement('div');
             newsItem.className = 'news-item';
             
+            // Truncate title to fit the space better (max 45 characters)
+            const truncatedTitle = article.title.length > 45 
+                ? article.title.substring(0, 42) + '...' 
+                : article.title;
+            
             newsItem.innerHTML = `
                 <img src="${article.image_url}" alt="${article.title}" onerror="this.src='https://via.placeholder.com/80x60/1a2332/ffffff?text=News'">
                 <div class="news-item-content">
-                    <h5>${article.title}</h5>
+                    <h5 title="${article.title}">${truncatedTitle}</h5>
                     <p class="date">${timeAgo}</p>
                 </div>
             `;

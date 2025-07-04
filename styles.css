@@ -583,6 +583,7 @@ button#fetch-button {
   line-height: 1.5;
   display: -webkit-box;
   -webkit-line-clamp: 4;
+  line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1151,9 +1152,6 @@ button#fetch-button {
     transform: none;
   }
 }
-  margin-bottom: 1rem;
-  display: block;
-}
 
 .initial-message .text {
   opacity: 0.8;
@@ -1451,28 +1449,51 @@ button#fetch-button {
   justify-content: center;
   overflow: hidden;
   min-height: 60px;
-  padding: 0.2rem 0;
+  padding: 0.3rem 0;
+  gap: 0.1rem;
 }
 
 .news-item h4 {
-  font-size: 0.6rem !important;
+  font-size: 0.8rem !important;
   text-align: left !important;
   color: #ffffff;
   font-weight: 600;
   margin: 0;
-  line-height: 1.2;
-  display: block;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
   max-width: 100%;
+  word-break: break-word;
+  hyphens: auto;
+}
+
+.news-item h5 {
+  font-size: 0.8rem !important;
+  text-align: left !important;
+  color: #ffffff;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  word-break: break-word;
+  hyphens: auto;
 }
 
 .news-item .date {
-  font-size: 0.5rem !important;
+  font-size: 0.7rem !important;
   text-align: left !important;
   color: #4a9eff;
-  margin: 0.2rem 0 0 0;
+  margin: 0;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.3px;
